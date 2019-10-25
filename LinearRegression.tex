@@ -1,0 +1,75 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Linear Regression Exercise}
+\author{Jonas Gonçalves}
+\date{October 2019}
+
+\begin{document}
+
+\maketitle
+
+\section{Introdução}
+
+Faça um programa que realize uma regressão linear para um dado conjunto de pontos. Outra possibilidade também seria a de criar uma variante que recebe um dado parâmetro \textbf{k}, passado como argumento, que vai simbolizar o número de diferentes conjuntos que terão suas regressões lineares feitas. \par
+Seu programa deve receber como argumento a quantidade de pontos, \textbf{p}, de cada conjunto e em seguida deve receber também os próprios pontos, pares \textit{(x,y)}, como input do usuário. Note que, se você decidir fazer a variante para \textbf{k} conjuntos, será necessário separar os pontos recebidos, de modo a relacioná-los ao seu respectivo conjunto e regressão.\par
+\textbf{Observção:} Pode ser interessante "printar" o resultado final das suas regressões lineares, ou seja, os coeficientes lineares e angulares delas.
+
+\section{Gráfico}
+
+Uma funcionalidade essencial do seu programa é a de plotar um gráfico que represente tanto os pontos quanto suas respectivas regressões, de modo a possuírem a mesma cor. Uma recomendação para tal tarefa, caso a linguagem que esteja sendo usada seja python, seria a da utilização das bibliotecas \textbf{matplotlib} e \textbf{numpy}.
+
+\section{Extras}
+
+Aqui é recomendada a criação de outros dois programas: \textit{RandomPoints} e \textit{RandomLines}. \par
+\textit{RandomPoints} se trata de um programa simples. O usuário escolhe um intervalo \textit{(a,b)} para o eixo x e \textit{(c,d)} para y, de modo que serão produzidos, aleatoriamente, \textbf{n} pontos, argumento também passado pelo usuário, dentro de tal intervalo. Este programa serve para criar distribuições que serão utilizadas para testar o programa principal.\par
+\textit{RandomLines} é outro programa que pode ser criado para "testar" a ferramenta de regressão linear. Este programa também recebe um intervalo para x e y, porém, ele recebe os coeficientes lineares e angulares de uma determinada reta. O intuito do programa é pegar um conjunto de pontos que estejam levemente distantes da reta que foi passado, ou seja, aplicar um fator \(\delta\) à um determinado ponto pertencente à reta. Este fator é dado pela multiplicação de um fator \(\epsilon\), passado pelo usuário, por um número aleatório gerado entre -1 e 1.\par
+
+\textbf{Observação:} Note que, com pequenas modificações, estes dois programas também se tornam capazes de produzir \textbf{k} diferentes conjuntos de pontos.
+
+\section{Exemplos de Execução}
+\begin{itemize}
+    \item \textbf{Código Padrão:}\\
+        \$ python3 LinearRegressionExercise.py\\
+        Type the number of lines: 2\\
+        Type the number os points: 2\\
+        -23 50\\
+        50 -23\\
+        Type the number os points: 3\\
+        1 13\\
+        -2 15\\
+        40 43\\
+        
+        Line 0: -1.0x + 27.0\\
+        Line 1: 0.7103825136612022x + 14.431693989071038\\
+
+        \item \textbf{RandomLine:}\\
+        \$ python3 RandomPoints.py\\
+        The name of the file is: rp\\
+        Type the number of lines: 3\\
+        How many random numbers do you want? 1\\
+        Type the desired interval of x here: 0 1\\
+        Type the desired interval of y here: 2 3\\
+        How many random numbers do you want? 2\\
+        Type the desired interval of x here: 0 1\\
+        Type the desired interval of y here: 0 1\\
+        How many random numbers do you want? 3\\
+        Type the desired interval of x here: -1 1\\
+        Type the desired interval of y here: -2 -1
+        \item \textbf{RandomLine:}\\
+            \$ python3 RandomLine.py\\
+            The name of the file is: rl \\
+            Type the number of lines: 2 \\
+            How many random numbers do you want? 2 \\
+            Type the desired interval (a,b) here: 0 2 \\
+            Type here m and n (y = mx + n): 1 0 \\
+            Choose your epsilon: 0.001 \\
+            How many random numbers do you want? 2 \\
+            Type the desired interval (a,b) here: 0 2 \\
+            Type here m and n (y = mx + n): 0 1 \\
+            Choose your epsilon: 0.001 \\
+
+
+\end{itemize}
+
+\end{document}
